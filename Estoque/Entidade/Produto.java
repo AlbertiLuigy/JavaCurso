@@ -1,0 +1,58 @@
+package Estoque.Entidade;
+
+public class Produto {
+
+    private String nome;
+    private double preco;
+    private int quantidadeEstoque;
+
+    public Produto(String nome, double preco, int quantidadeEstoque){
+
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
+    public String getNome(){
+        return nome;
+    }
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public double getPreco(){
+        return preco;
+    }
+
+    public void setPreco(double preco){
+        this.preco = preco;    
+    }
+
+    public int getQuantidadeEstoque(){
+        return quantidadeEstoque;
+    }
+
+    public double ValorTotalEstoque(){
+
+        double valorTotal = quantidadeEstoque * preco;
+        return valorTotal;
+    }
+
+    public void AdicionarProdutos(int quantidade){
+        
+        quantidadeEstoque = quantidadeEstoque + quantidade;
+
+    }
+
+    public void RemoverProdutos(int quantidade){
+
+        quantidadeEstoque = quantidadeEstoque - quantidade;
+        
+    }
+
+    public String toString(){
+        return "Nome: " + nome + ", Preço: " + preco + ", Quantidade: " + quantidadeEstoque;
+    }
+    
+}
